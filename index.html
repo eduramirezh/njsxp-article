@@ -30,37 +30,82 @@
 	<h3>Popularity</h3>
 	<p>As of November 2013, statistics on GitHub show the <a href='https://github.com/joyent/node'>Node.js repository</a> as the third most popular project, right after Twitter's bootstrap and JQuery. In 2011 it surpassed Ruby on Rails, then the most popular repo.</p>
 	<p>This also meant an increase in the popularity of Javascript in open source projects. This next charts represent the most popular languages on Github repos for 2010 and 2013</p>
-	<img src="http://4.bp.blogspot.com/_FsLa1cMTCWU/TGBlqQEs5yI/AAAAAAAAAXM/HkwNFJnohoI/s400/top_10_github_languages_by_reps.png" align="bottom" width="500" height="300">	
-	<img src="http://www.softwarefreedom.org/resources/2013/lcs-slides-aaronw/images/github-languages.png" align="bottom" width="500" height="300">	
+	<img src="http://4.bp.blogspot.com/_FsLa1cMTCWU/TGBlqQEs5yI/AAAAAAAAAXM/HkwNFJnohoI/s400/top_10_github_languages_by_reps.png" align="bottom"  height="300">	
+	<img src="http://www.softwarefreedom.org/resources/2013/lcs-slides-aaronw/images/github-languages.png" align="bottom"  height="300">	
 	<h2>Real experiences</h2>
-	<p>Node.js is a new tool. Its current version is 0.10.22, meaning it hasn't released a <i>v 1.0</i> version yet. However, this hasn't prevent big companies for using it in its products. The official site shows <a href="http://nodejs.org/industry/"> a list of them</a>, and they go from start-ups like Learnboost.com to big, consolidated companies like Yahoo! and LinkedIn. The discussed reasons for using Node are different for them, as there are different implications for migrations to Node, mainly beacause of performance needs, to start new projects using it, where the main reasons are more related to developers skills and preferences too.</p>
+	<p>Node.js is a new tool. Its current version is 0.10.22, meaning it hasn't released a <i>v 1.0</i> version yet. However, this hasn't prevent big companies for using it in its products. The official site shows <a href="http://nodejs.org/industry/"> a list of them</a>, and they go from start-ups like Learnboost.com to big, consolidated companies like Yahoo! and LinkedIn. The discussed reasons for using Node are slightly different for consolidated projects and for start-ups. The former have migrated to this tool mainly beacause of performance needs, and the latter have chosen it for reasons related to developers skills and preferences too.</p>
 	<h3>Why Node?</h3>
-	<p>There seems to be three main reasons companies are basing their option to go with Node: Scalability, Real-time scenarios and end-to-end Javascript. When asked about the reasons why they did a complete deployment for the server side of their mobile app in Node.js, LinkedIn’s mobile development lead Kiran Prasad said: </p>
+	<p>There are three main reasons companies are basing their option to go with Node: Scalability, Real-time scenarios and end-to-end Javascript. When asked about the reasons why they did a complete deployment for the server side of their mobile app in Node.js, LinkedIn’s mobile development lead Kiran Prasad said: </p>
 	<blockquote>
 “On the server side, our entire mobile software stack is completely built in Node. We use a ton of technologies at LinkedIn, but for the mobile server piece, it’s entirely Node-based.
 	One reason was scale. The second is, if you look at Node, the thing it’s best at doing is talking to other services. The mobile app has to talk to our platform API and database. We’re not doing massive data analytics. Node showed us huge performance gains compared to what we were using before, which was Ruby on Rails.”
 	</blockquote>
-	<h2>Scalability</h2>
-	<h2>Real-time scenarios</h2>
-	<h2>End-to-end javascript</h2>
-	<h3>Why not Node?</h3>
+	<p>The definition of scalability from Wikipedia as described by André B. Bondi, “Characteristics of scalability and their impact on performance”, is:</p>
+       	<blockquote>  “the ability of a system, network, or process, to handle growing amount of work in a capable manner or its ability to be enlarged to accommodate that growth.”</blockquote>
+	<p>One of Node main reasons for its rise in popularity is the emphasis on its scalability due to its event-driven non-blocking processing. This is closely related to its Real-time interactions capability.</p>
+	<p>According to Tom Hughes-Croucher, author of the book "Node: Up and running", “Node has popularized event-driven programming.The actual amount of resources you use is much smaller, and you can get a lot more out of fewer servers.”</p>
+	<p>On the other hand, end-to-end Javascript has become a really attractive feature for developers and a common choice for start-ups. Having the same language on front-side, server-side and database level (MongoDB, CouchDB) has enabled a better interaction between developers from differents levels of an application. This will be particularly analyzed in the Yahoo! case.</p>
+	<h2>Cases analysis</h2>
 	<h3>From zero to Node</h3>
+	<p>Igal Perelman is the VP of product for Voxer, an iOS app that simulates a walkie-talkie. Basically, the user pushes a button, starts talking, and the message is immediately sent to the app user on the other end. Both parties can listen and talk simultaneously. Chat requests come through as push notifications, allowing the users to choose whether or not to join the chat. Voxer uses Node because the low latency allows for near-instant transfer of audio data. Says Perelman: “Node was very crucial to this, because the audio needed to be live. And Node allows us to maintain a large number of connections with very low latency. It was a quite easy decision.”</p>	
 	<h3>Migrating to Node</h3>
+	<p>	LinkedIn migrated their mobile software from Ruby on Rails on the server side to a complete Node.js stack. As Kirin Prasad, the company’s mobile chief said:</p>
+	<blockquote>“On the server side, our entire mobile software stack is completely built in Node. We use a ton of technologies at LinkedIn, but for the mobile server piece, it’s entirely Node-based… Node showed us huge performance gains compared to what we were using before, which was Ruby on Rails.”</blockquote>
+	<p>However, the LinkedIn team had their concerns when planning to move to this new platform. They analyzed other Ruby, Java and Scala based software, but Node was what they considered the most proper choice. Prasad has said, however, that being a relatively new tool, they are willing to abandon Node if it doesn't fulfill their needs. </p> 
 	<h2>The Yahoo! case</h2>	
+	<p>Yahoo’s developers started experimenting with Node.js in early 2010. It consisted in simple things like file uploads to understand the capabilities of server-side Javascript. Eventually, the company decided to make a bigger investment. “We wanted to maintain the same code base on the client side and the server side,” said Yahoo’s platform vice president, Bruno Fernandez-Ruiz. “Node.js was the way to go. We invested over 12 months in this.”</p>
+	<h3>Cocktails</h3>
+	<p>On 2011 Yahoo announced <i>Cocktails</i>, "a set of technologies that make it easy to develop and host applications that can run on both client and server-side environments". It is composed by Yahoo! Mojito, an environment-agnostic JavaScript web application framework, and Yahoo! Manhattan, a hosted platform (PaaS) for Mojito-based applications.</p>
+	<p>Mojito is a JavaScript web application framework that can run in a browser and on a server, giving developers the ability to maintain a single JavaScript codebase for both client front-end and server back-end. The web framework deploys itself from the server runtime into the browser runtime, allowing developers to write web modules that can be executed within either runtime. For example, a Mojito application will run on the client if JavaScript is enabled. This same application will run on the server if the client is not equipped to run JavaScript. A Mojito application can also be installed as an app on a mobile device. Applications are built on HTML5, CSS3, JavaScript, Node.js, YUI3 and YQL and Node.js is what allows Mojito applications to run on the server. Manhattan provides higher-level services like security, scalability, high availability and monitoring on top of the Node.js. This shows Yahoo interest not only in deploying their own applications using Node.js, but to incentivize its use by other developers.</p>
 	<h2>Personal analysis</h2>
+	<p>From the cases analyzed and the data gathered during this investigation, we can deduce that the first step to understand if Node.js will be a good choice for an application is to have a clear understanding of the features we are looking for.</p>
+	<p>	A big number of concurrent connections and permanent connections through WebSockets or Server Side Events are needs where Node.js seems to excel. However, when complex operations must be done on the server side engineers are choosing other options. Since every application has different requirements, an exhaustive benchmarking should be done to determine a proper architecture </p>
+	<p> During the invesitgation I found tools similar to Node.js that seem to be better in certain performance aspects.This may imply that it's not only performance what's made Node so popular. I think that there are two other big factors:</p>
+	<p>	In first place, as it was shown before in this report, end-to-end Javascript is not just anecdotic. Having the same language on all levels of an application not only means a better communication between its parts, but a better communication between all developers. Web development has been always a multilanguage process, and having all teams using the same language can generate a new level of agile development on this area. Ruby on Rails became popular for its speed of development, but that was due mainly to how easy is to connect the parts with it. With Node, it's not only connecting, but actually developing complex solutions that work across all levels.  </p>
+	<p>In second place, the community of <i>noders</i> is surprisingly big. As it was mentioned before, the official repo on GitHub for Node.js is currently the third most popular, surpassing Ruby on Rails last year. This community is not only working on Node.js itself, pushing to reach the 1.0 version, but developing new and powerful npm packages. As of November 27th, 118 packages are being added in a day in average to npm, while 53 gems are added to RubyGems on the same period. This is completely relevant as it makes it easier for developers to create innovative and efficient solutions to problems in web development we face today, and for those we may face in the future.</p>
 	<h2>Bibliography</h2>
-
-<p>
-
+<p></p>
 <ol>
- <li> <a name="Iserles_2009"></a> <b>A. Iserles</b>. 
-    <em>A First Course in the Numerical Analysis of Differential Equations</em>,
-    Cambridge University Press,
-    2009.</li>
- <li> <a name="Langtangen_2012"></a> <b>H. P. Langtangen</b>. 
-    <em>A Primer on Scientific Programming With Python</em>,
-    Springer,
-    2012.</li>
+ <li> <a name="inruntime.com"></a> <b>inruntime.com</b>. 
+<em>Technology Stack for Startups: JavaScript</em>
+</li>
+<li> <a name="http://nodejs.org/"></a> <b>nodejs.org</b>. 
+   </li>
+   <li> <a name="http://readwrite.com/"></a> <b>readwrite.com</b>. 
+   <em>How 3 Companies Are Using Node.js</em>, 2011
+
+   </li>
+   <li> <a name="mashable.com"></a> <b>mashable.com</b>. 
+    <em>Why Everyone Is Talking About Node</em>, 2011
+   </li>
+      <li> <a name="http://venturebeat.com/"></a> <b>venturebeat.com</b>. 
+    <em>Node at scale: What Google, Mozilla, & Yahoo are doing with Node.js</em>, 2012
+   </li>
+      <li> <a name="http://venturebeat.com/"></a> <b>venturebeat.com</b>. 
+    <em>Yahoo dives deeper down the Node.js rabbit hole with open-source Mojito</em>, 2012
+   </li>
+     <li> <a name="developer.yahoo.com"></a> <b>developer.yahoo.com</b>. 
+    <em>Mojito: A Quick Tour</em>
+   </li>
+   <li> <a name="developer.yahoo.com"></a> <b>developer.yahoo.com</b>. 
+    <em>NodeJS + Cocktails: Scaling Yahoo! – an HTML5 Dev Conf talk</em>, 2012
+   </li>
+   <li> <a name="log.appfog.com"></a> <b>log.appfog.com</b>. 
+    <em>Node.js is taking over the Enterprise – whether you like it or not</em>, 2012
+   </li>
+      <li> <a name="http://venturebeat.com/"></a> <b>venturebeat.com</b>. 
+    <em>Exclusive: How LinkedIn used Node.js and HTML5 to build a better, faster app</em>, 2011
+   </li>
+         <li> <a name="http://venturebeat.com/"></a> <b>venturebeat.com</b>. 
+    <em>Why Walmart is using Node.js</em>, 2012
+   </li>
+<li> <a name="John Frizelle"></a> <b>John Frizelle</b>. 
+<em>A scalability study into Server Push technologies with regard to server performance </em>, Waterford Institute of Technology, 2011
+   </li>
+   <li> <a name="ebaytechblog.com"></a> <b>ebaytechblog.com</b>. 
+<em>How We Built eBay’s First Node.js Application </em>,  2013
+   </li>
+
 </ol>
       </section>
     </div>
